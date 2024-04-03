@@ -27,13 +27,11 @@ export default function Dashboard() {
         <DashSidebar />
       </div>
       <div className="grow overflow-x-auto">
-        {
-          tab === 'profile' ? <DashProfile />
-            : tab === 'posts' ? <DashPosts />
-              : tab === 'users' ? <DashUsers />
-                :tab === 'comments' ? <DashComments />
-                  : <DashCromp />
-        }
+        {tab === 'profile' && <DashProfile />}
+        {tab === 'posts' && <DashPosts />}
+        {tab === 'users' && <DashUsers />}
+        {tab === 'comments' && <DashComments />}
+        {tab === 'dashComp' && <DashCromp />}
       </div>
     </div>
   )

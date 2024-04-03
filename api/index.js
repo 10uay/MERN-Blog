@@ -6,7 +6,7 @@ import userAuth from './routes/auth.route.js'
 import postRoutes from './routes/post.route.js'
 import commentRoute from './routes/comment.route.js'
 import cookieParser from 'cookie-parser'
-import path from 'path';
+import path from 'path'
 
 
 
@@ -18,19 +18,15 @@ app.use(express.json())
 
 app.use(cookieParser())
 
+
 mongoose
     .connect(process.env.MONGO_URI)
     .then(() => console.log('Connected to MongoDB'))
     .catch((error) => console.log(error))
 
 
-const __dirname = path.resolve();
+const __dirname = path.resolve()
 
-app.use(express.static(path.join(__dirname, '/client/dist')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-})
 
 app.listen(3000, () => {
     console.log('Server running on port 3000')
@@ -40,6 +36,13 @@ app.use('/api/auth', userAuth)
 app.use('/api/user', userRoutes)
 app.use('/api/post', postRoutes)
 app.use('/api/comment', commentRoute)
+
+
+app.use(express.static(path.join(__dirname, '/client/dist')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'))
+})
 
 
 app.use((error, req, res, next) => {

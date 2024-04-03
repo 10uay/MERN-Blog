@@ -78,7 +78,9 @@ export default function Header() {
                 <span className="block truncate text-sm font-medium">{currentUser.email}</span>
               </Dropdown.Header>
               <Dropdown.Item as={Link} to='/search'>Search</Dropdown.Item>
-              <Dropdown.Item as={Link} to='/dashboard?tab=dashboard'>Dashboard</Dropdown.Item>
+              {currentUser.isAdmin && (
+                <Dropdown.Item as={Link} to='/dashboard?tab=dashboard'>Dashboard</Dropdown.Item>
+              )}
               <Dropdown.Divider />
               <Dropdown.Item onClick={handleSignOut}>Sign out</Dropdown.Item>
             </Dropdown>

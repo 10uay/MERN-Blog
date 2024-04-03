@@ -43,7 +43,7 @@ export default function DashSidebar() {
         <Sidebar>
             <Sidebar.Items>
                 <Sidebar.ItemGroup>
-                    <Sidebar.Item as={Link} icon={HiChartPie} active={tab === 'dashboard'} to='/dashboard?tab=dashboard' className="relative">
+                    <Sidebar.Item as={Link} icon={HiChartPie} active={tab === 'dashComp'} to='/dashboard?tab=dashComp' className="relative">
                         Dashboard
                         <span className="bg-slate-600 text-white py-1 px-2 text-sm absolute right-2 top-[50%] translate-y-[-50%] rounded dark:bg-white dark:text-black">
                             {currentUser.isAdmin ? 'Admin' : 'User'}

@@ -15,7 +15,7 @@ export default function DashPosts() {
   const [openModal, setOpenModal] = useState(false)
   const navigate = useNavigate()
 
-
+  // console.log(userPosts);
 
   useEffect(() => {
     const fetchPosts = async () => {

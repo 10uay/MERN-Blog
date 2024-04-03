@@ -86,6 +86,7 @@ export const getUsers = async (req, res, next) => {
             lastMonthUsers
         })
     } catch (error) {
+        console.log('llllllllll');
         next(error)
     }
 }
